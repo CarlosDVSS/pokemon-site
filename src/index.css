@@ -94,12 +94,12 @@ button {
 }
 
 .gba-console--planilha {
-  max-width: min(1120px, 96vw);
+  max-width: min(1520px, 98vw);
 }
 
 .gba-console--planilha .gba-screen {
   min-height: min(72vh, 720px);
-  padding: 14px 14px 18px;
+  padding: 14px 16px 18px;
 }
 
 .gba-top {
@@ -1363,7 +1363,10 @@ th {
 
 /* ——— Planilha de desempenho ——— */
 .planilha-screen {
+  width: 100%;
+  max-width: 100%;
   font-size: 1em;
+  box-sizing: border-box;
 }
 
 .planilha-title {
@@ -1372,22 +1375,25 @@ th {
 }
 
 .planilha-table-wrap {
+  width: 100%;
   max-width: 100%;
 }
 
 .planilha-table {
   table-layout: fixed;
   font-size: clamp(0.58rem, 1.65vw, 0.78rem);
-  min-width: min(100%, 520px);
   width: 100%;
+  min-width: 100%;
 }
 
 .planilha-col-student {
-  width: 10rem;
+  width: 13rem;
+  min-width: 10rem;
 }
 
 .planilha-col-species {
-  width: 7rem;
+  width: 10rem;
+  min-width: 8.5rem;
 }
 
 .planilha-col-task {
@@ -1395,11 +1401,13 @@ th {
 }
 
 .planilha-col-total {
-  width: 4.25rem;
+  width: 5.75rem;
+  min-width: 5.75rem;
 }
 
 .planilha-col-base {
-  width: 7rem;
+  width: 10rem;
+  min-width: 8.5rem;
 }
 
 .planilha-table th {
@@ -1413,10 +1421,16 @@ th {
 
 .planilha-th-student,
 .planilha-th-species,
-.planilha-th-base,
-.planilha-th-total {
+.planilha-th-base {
   word-break: break-word;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+
+.planilha-th-total {
+  white-space: nowrap;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 .planilha-th-task {
@@ -1428,8 +1442,8 @@ th {
   font-weight: bold;
   color: #203040;
   word-break: break-word;
-  overflow-wrap: anywhere;
-  hyphens: auto;
+  overflow-wrap: break-word;
+  hyphens: none;
 }
 
 .planilha-th-base {
@@ -1450,26 +1464,28 @@ th {
   font-size: clamp(0.68rem, 2vw, 0.85rem);
 }
 
-.planilha-name,
-.planilha-species,
-.planilha-base {
+.planilha-name {
   text-align: center;
   vertical-align: middle;
+  hyphens: none;
   word-break: break-word;
-  overflow-wrap: anywhere;
-  hyphens: auto;
+  overflow-wrap: break-word;
   line-height: 1.35;
-}
-
-.planilha-name {
   font-weight: bold;
   color: #203020;
 }
 
 .planilha-species,
 .planilha-base {
+  text-align: center;
+  vertical-align: middle;
   font-size: 0.55rem;
   color: #304050;
+  hyphens: none;
+  /* Nomes de espécie numa linha; colunas largas o suficiente na consola expandida */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .planilha-num {
@@ -1492,6 +1508,7 @@ th {
 }
 
 .planilha-total {
+  white-space: nowrap;
   text-align: center;
   font-weight: bold;
   color: #c06010;
@@ -1503,4 +1520,15 @@ th {
   padding: 20px 16px !important;
   color: #607060;
   font-size: 0.55rem;
+}
+
+/* Em ecrãs muito estreitos, nomes de espécie podem voltar a quebrar (sem hífen automático) */
+@media (max-width: 640px) {
+  .planilha-species,
+  .planilha-base {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    word-break: break-word;
+  }
 }

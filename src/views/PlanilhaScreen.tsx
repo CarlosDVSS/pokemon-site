@@ -126,8 +126,12 @@ export function PlanilhaScreen({ onBack }: { onBack: () => void }) {
 
                 return (
                   <tr key={s.id} className={rowIdx % 2 === 0 ? 'planilha-row--zebra' : ''}>
-                    <td className="planilha-name">{s.name.toLocaleUpperCase('pt-BR')}</td>
-                    <td className="planilha-species">{speciesNow}</td>
+                    <td className="planilha-name" title={s.name}>
+                      {s.name.toLocaleUpperCase('pt-BR')}
+                    </td>
+                    <td className="planilha-species" title={speciesNow}>
+                      {speciesNow}
+                    </td>
                     {tasksOrdered.map((t) => {
                       const cur = scoreForTask(data.scores, s.id, t.id) ?? ''
                       return (
@@ -149,7 +153,9 @@ export function PlanilhaScreen({ onBack }: { onBack: () => void }) {
                       )
                     })}
                     <td className="planilha-total">{total}</td>
-                    <td className="planilha-base">{baseFirst}</td>
+                    <td className="planilha-base" title={baseFirst}>
+                      {baseFirst}
+                    </td>
                   </tr>
                 )
               })
