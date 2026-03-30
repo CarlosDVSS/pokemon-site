@@ -33,4 +33,4 @@ Não incluí trilhas de jogos comerciais por direitos autorais — use um `bgm.m
 
 ## Sprites
 
-Imagens vêm da [PokeAPI](https://pokeapi.co/) (geração III, estilo próximo ao GBA). Vale checar o que sua faculdade pede sobre uso de imagens de terceiros.
+Imagens vêm da [PokeAPI](https://pokeapi.co/) (geração III, estilo próximo ao GBA).
