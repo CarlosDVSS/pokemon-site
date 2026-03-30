@@ -42,20 +42,22 @@ function AppShell() {
       {current && (
         <EvolutionOverlay key={current.id} event={current} onDone={dismiss} />
       )}
-      {screen === 'home' ? (
-        <GbaHome
-          onPlacar={() => nav('placar')}
-          onRegistrar={() => nav('registrar')}
-          onEquipes={() => nav('equipes')}
-          onLista={() => nav('lista')}
-          onPlanilha={() => nav('planilha')}
-        />
-      ) : (
-        <div className={screen === 'planilha' ? 'gba-console gba-console--planilha' : 'gba-console'}>
-          <div className="gba-top">PLACAR POKéMON</div>
-          <div className="gba-screen">{inner}</div>
-        </div>
-      )}
+      <div className="gba-root-main">
+        {screen === 'home' ? (
+          <GbaHome
+            onPlacar={() => nav('placar')}
+            onRegistrar={() => nav('registrar')}
+            onEquipes={() => nav('equipes')}
+            onLista={() => nav('lista')}
+            onPlanilha={() => nav('planilha')}
+          />
+        ) : (
+          <div className={screen === 'planilha' ? 'gba-console gba-console--planilha' : 'gba-console'}>
+            <div className="gba-top">PLACAR POKéMON</div>
+            <div className="gba-screen">{inner}</div>
+          </div>
+        )}
+      </div>
     </>
   )
 }
