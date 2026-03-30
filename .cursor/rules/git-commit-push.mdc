@@ -1,0 +1,16 @@
+---
+description: Após alterações no código, fazer commit e push para o GitHub.
+alwaysApply: true
+---
+
+# Git — commit e push
+
+Quando você concluir mudanças neste repositório que o usuário queira versionar:
+
+1. `git status` — ver o que mudou.
+2. `git add` nos ficheiros relevantes (não incluir `.env`, segredos, ou ficheiros só locais).
+3. `git commit -m "mensagem curta em português ou inglês coerente com o projeto"`.
+4. `git pull origin main --rebase` (ou merge se fizer sentido) se o push for rejeitado por histórico divergente.
+5. `git push origin main`.
+
+Não pedir token nem credenciais ao utilizador; se o push falhar por autenticação, indicar que ele deve usar GitHub Desktop ou configurar credenciais no PC.
