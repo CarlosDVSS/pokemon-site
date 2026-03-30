@@ -29,7 +29,7 @@ body {
   color: var(--gba-text);
   line-height: 1.6;
   image-rendering: pixelated;
-  cursor: url('/cursor-red.svg') 4 6, auto;
+  cursor: url('/pointer-red.svg') 4 6, auto;
 }
 
 a,
@@ -48,18 +48,18 @@ label[for],
 .btn-danger-soft,
 .btn-inline,
 .voltar-link {
-  cursor: url('/cursor-red.svg') 4 6, pointer;
+  cursor: url('/pointer-red.svg') 4 6, pointer;
 }
 
 input:not([type='checkbox']):not([type='radio']),
 select,
 textarea {
-  cursor: url('/cursor-red.svg') 4 6, text;
+  cursor: url('/pointer-red.svg') 4 6, text;
 }
 
 input[type='checkbox'],
 input[type='radio'] {
-  cursor: url('/cursor-red.svg') 4 6, pointer;
+  cursor: url('/pointer-red.svg') 4 6, pointer;
 }
 
 #root {
@@ -784,7 +784,7 @@ th {
   align-items: center;
   justify-content: center;
   padding: 16px;
-  cursor: url('/cursor-red.svg') 4 6, default;
+  cursor: url('/pointer-red.svg') 4 6, default;
 }
 
 .evo-backdrop {
@@ -1376,26 +1376,54 @@ th {
 }
 
 .planilha-table {
+  table-layout: fixed;
   font-size: clamp(0.58rem, 1.65vw, 0.78rem);
   min-width: min(100%, 520px);
   width: 100%;
 }
 
+.planilha-col-student {
+  width: 10rem;
+}
+
+.planilha-col-species {
+  width: 7rem;
+}
+
+.planilha-col-task {
+  width: auto;
+}
+
+.planilha-col-total {
+  width: 4.25rem;
+}
+
+.planilha-col-base {
+  width: 7rem;
+}
+
 .planilha-table th {
   text-align: center;
-  vertical-align: bottom;
+  vertical-align: middle;
   background: linear-gradient(180deg, #d8e8f8 0%, #c0d8e8 100%);
   border-color: #8098a8;
   padding: 10px 8px;
   line-height: 1.35;
 }
 
-.planilha-th-task {
-  min-width: 7.5rem;
-  max-width: 14rem;
+.planilha-th-student,
+.planilha-th-species,
+.planilha-th-base,
+.planilha-th-total {
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
-.planilha-th-name {
+.planilha-th-task {
+  min-width: 0;
+}
+
+.planilha-th-tasktitle {
   display: block;
   font-weight: bold;
   color: #203040;
@@ -1404,15 +1432,13 @@ th {
   hyphens: auto;
 }
 
-/* Largura estável para alinhar cabeçalho e células da coluna «1º Pokémon» */
 .planilha-th-base {
-  min-width: 6.75rem;
-  max-width: 10rem;
+  min-width: 0;
 }
 
 .planilha-table td {
   border-color: #c8d8c8;
-  padding: 8px 6px;
+  padding: 10px 8px;
   vertical-align: middle;
 }
 
@@ -1424,33 +1450,26 @@ th {
   font-size: clamp(0.68rem, 2vw, 0.85rem);
 }
 
+.planilha-name,
+.planilha-species,
+.planilha-base {
+  text-align: center;
+  vertical-align: middle;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+  line-height: 1.35;
+}
+
 .planilha-name {
   font-weight: bold;
   color: #203020;
-  min-width: 6rem;
-  max-width: 14rem;
-  word-break: break-word;
-  overflow-wrap: anywhere;
 }
 
-.planilha-species {
-  font-size: 0.55rem;
-  color: #304050;
-  min-width: 5.5rem;
-  max-width: 10rem;
-  word-break: break-word;
-  overflow-wrap: anywhere;
-}
-
+.planilha-species,
 .planilha-base {
   font-size: 0.55rem;
   color: #304050;
-  text-align: center;
-  vertical-align: middle;
-  min-width: 6.75rem;
-  max-width: 10rem;
-  word-break: break-word;
-  overflow-wrap: anywhere;
 }
 
 .planilha-num {

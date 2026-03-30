@@ -29,7 +29,7 @@ A pasta `dist` é o site. Firebase Hosting, Netlify, Vercel ou qualquer hospedag
 
 Efeitos são gerados no próprio navegador. Música: botão ♪; se existir `public/bgm.mp3`, ele tenta tocar isso, senão fica um loop simples tipo RPG 8-bit. 🔊/🔇 grava preferência no `localStorage`.
 
-Não incluí trilhas de jogos comerciais por direitos autorais — use um `bgm.mp3` seu se quiser uma música específica.
+Por direitos autorais, trilhas de jogos comerciais não são distribuídas; podes usar um `bgm.mp3` próprio se quiseres música específica.
 
 ## Sprites
 

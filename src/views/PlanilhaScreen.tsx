@@ -70,16 +70,31 @@ export function PlanilhaScreen({ onBack }: { onBack: () => void }) {
 
       <div className="planilha-table-wrap table-wrap">
         <table className="planilha-table">
+          <colgroup>
+            <col className="planilha-col-student" />
+            <col className="planilha-col-species" />
+            {tasksOrdered.map((t) => (
+              <col key={t.id} className="planilha-col-task" />
+            ))}
+            <col className="planilha-col-total" />
+            <col className="planilha-col-base" />
+          </colgroup>
           <thead>
             <tr>
-              <th scope="col">Aluno</th>
-              <th scope="col">Pokémon</th>
+              <th scope="col" className="planilha-th-student">
+                Aluno
+              </th>
+              <th scope="col" className="planilha-th-species">
+                Pokémon
+              </th>
               {tasksOrdered.map((t) => (
                 <th key={t.id} scope="col" className="planilha-th-task">
-                  <span className="planilha-th-name">{t.title}</span>
+                  <span className="planilha-th-tasktitle">{t.title}</span>
                 </th>
               ))}
-              <th scope="col">Total</th>
+              <th scope="col" className="planilha-th-total">
+                Total
+              </th>
               <th scope="col" className="planilha-th-base">
                 1º Pokémon
               </th>
