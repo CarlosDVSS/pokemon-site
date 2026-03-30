@@ -80,7 +80,9 @@ export function PlanilhaScreen({ onBack }: { onBack: () => void }) {
                 </th>
               ))}
               <th scope="col">Total</th>
-              <th scope="col">1º Pokémon</th>
+              <th scope="col" className="planilha-th-base">
+                1º Pokémon
+              </th>
             </tr>
           </thead>
           <tbody>

@@ -1404,6 +1404,12 @@ th {
   hyphens: auto;
 }
 
+/* Largura estável para alinhar cabeçalho e células da coluna «1º Pokémon» */
+.planilha-th-base {
+  min-width: 6.75rem;
+  max-width: 10rem;
+}
+
 .planilha-table td {
   border-color: #c8d8c8;
   padding: 8px 6px;
@@ -1427,11 +1433,21 @@ th {
   overflow-wrap: anywhere;
 }
 
-.planilha-species,
-.planilha-base {
+.planilha-species {
   font-size: 0.55rem;
   color: #304050;
   min-width: 5.5rem;
+  max-width: 10rem;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.planilha-base {
+  font-size: 0.55rem;
+  color: #304050;
+  text-align: center;
+  vertical-align: middle;
+  min-width: 6.75rem;
   max-width: 10rem;
   word-break: break-word;
   overflow-wrap: anywhere;
